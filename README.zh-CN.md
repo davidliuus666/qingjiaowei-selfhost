@@ -8,6 +8,8 @@
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
 
+> **不要走 Workers & Pages → Create → Import a repository。** 连接 GitHub 后，让按钮自己新建仓库；手动导入源仓库不会自动创建 D1，最后会在部署阶段失败。
+
 - Worker：跑后端
 - D1：存文字内容、聚会、公告、测验、作业
 - **不需要 R2**：图片、音频、PDF 都填外部直链
@@ -23,7 +25,7 @@
 
 ## 部署（给技术同工的手动版）
 
-优先点上面的「Deploy to Cloudflare」。如果按钮走不通，再用下面的手动步骤；按钮是新加的，还在干净账号上验证。
+优先点上面的「Deploy to Cloudflare」。按钮已经实际部署验证过；如果走不通，再用下面的手动步骤。
 
 ```bash
 npm install
@@ -120,5 +122,5 @@ MIT 只覆盖本仓库的代码；“青椒味”“QJW”名称和 LOGO 是项�
 
 - 第一版：D1 only、无 R2、首次设置向导、设置码、默认关闭生命河自动同步。
 - 文档更新：补充自定义域名和 DNSHE 免费域名步骤；绑定后二维码自动使用新地址。
-- 一键按钮已发布；干净账号验证还在进行。
+- 一键按钮已实际部署验证；不要走手动导入仓库的旧路径。
 - 许可证：MIT。

@@ -4,9 +4,13 @@
 
 ## 当前状态
 
-公开仓库已经建好：<https://github.com/davidliuus666/qingjiaowei-selfhost>，按钮也已经放进 `README.zh-CN.md` 和 `START-HERE.zh-CN.md`。
+公开仓库已经建好：<https://github.com/davidliuus666/qingjiaowei-selfhost>，按钮也已经在真实 Cloudflare 账号上跑通：它会新建一个仓库副本，并自动创建真实的 D1 数据库。
 
-现在只剩一个发布门槛：在**干净的 Cloudflare 账号**上实际跑通。通过之前，按钮按 beta 处理，手动步骤继续作为兜底。
+下面的干净账号清单继续用于回归测试。手动步骤保留作为兜底。
+
+## 常见错误：手动导入仓库
+
+不要走 **Workers & Pages → Create → Import a repository**。那条路会直接部署源仓库，不会自动创建 D1，最后会在部署阶段失败。连接 GitHub 后，让按钮自己新建仓库；如果名字被占用，Cloudflare 会加后缀（例如 `qingjiaowei-selfhost2`），并把真实的 D1 ID 写进副本的 `wrangler.jsonc`。
 
 ## 公开仓库要求
 
@@ -77,4 +81,4 @@
 - 免费域名可以用 DNSHE（优先 `.de5.net`），但只建议测试/过渡，长期用还是自己买域名。
 - 一键按钮复制的是用户自己的仓库，上游更新不会自动同步。
 - 第一版没有 R2、没有自动升级；自定义域名支持，但要在部署后手动绑定。
-- 在干净账号测试清单通过前，按钮按 beta 处理。
+- 不要手动导入仓库；用按钮才会自动创建 D1。

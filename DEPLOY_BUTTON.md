@@ -4,9 +4,13 @@ This page is for maintainers, not group leaders. Leaders should read [START-HERE
 
 ## Current status
 
-The public repository is live at <https://github.com/davidliuus666/qingjiaowei-selfhost>, and the button is in `README.md` and `START-HERE.md`.
+The public repository is live at <https://github.com/davidliuus666/qingjiaowei-selfhost>, and the button has been used successfully in a real Cloudflare account. It created a new repository and a real D1 database.
 
-The remaining gate is a real run on a **clean Cloudflare account**. Until that passes, treat the button as beta and keep the manual steps as the fallback.
+The clean-account checklist below remains for regression testing. Keep the manual steps as the fallback.
+
+## Common mistake: manual import
+
+Do not use **Workers & Pages → Create → Import a repository**. That path deploys the source repo directly, does not provision D1, and fails at the deploy step. After connecting GitHub, let the button create a new repository; if the name is taken, Cloudflare adds a suffix such as `qingjiaowei-selfhost2` and writes the real D1 ID into that copy's `wrangler.jsonc`.
 
 ## Repository requirements
 
@@ -77,4 +81,4 @@ Use an account that has never used Cloudflare Workers, and follow the beginner p
 - Free domains from DNSHE (prefer `.de5.net`) are an option for testing or transition, but a paid domain is better for long-term use.
 - The button copies the code into the user's repository, so upstream updates do not sync automatically.
 - The first edition has no R2 and no automatic upgrades. Custom domains are supported but must be bound after deployment.
-- The button is beta until the clean-account checklist passes.
+- Do not manually import the repository; use the button so D1 is provisioned.

@@ -9,6 +9,8 @@
 
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
 
+> **Do not use Workers & Pages → Create → Import a repository.** After connecting GitHub, let the button create a new repository. That is what provisions D1. Manually importing the source repo skips D1 and fails at the deploy step.
+
 - **Workers** for the backend
 - **D1** for text content, meetings, announcements, quizzes, and homework
 - **No R2 required** — images, audio, and PDFs are external public URLs
@@ -24,7 +26,7 @@
 
 ## Manual deployment (for technical volunteers)
 
-Prefer the button above. If it does not work, these manual steps remain the fallback. The button is new and is still being verified on a clean Cloudflare account.
+Prefer the button above. It has been verified with a real Cloudflare deployment. If it does not work, these manual steps remain the fallback.
 
 ```bash
 npm install
@@ -121,5 +123,5 @@ The MIT license covers the code in this repository. The names “青椒味” an
 
 - First release: D1 only, no R2, first-time setup wizard, setup code, Life River auto-sync off by default.
 - Docs update: added custom-domain and DNSHE free-domain steps; QR codes use the new address after binding.
-- One-click deploy button published; clean-account verification is pending.
+- One-click deploy button verified with a real Cloudflare deployment; manual import is not supported.
 - License: MIT.

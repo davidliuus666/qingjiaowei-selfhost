@@ -14,6 +14,8 @@ Read this page first. You do not need to be technical.
 
 The button copies the code into your GitHub account and creates the D1 database for you.
 
+> **Do not use Cloudflare's "Import a repository" option.** Let the button create the new repository; that is what creates D1.
+
 ## Deploy with the one-click button: five steps, plus an optional domain step
 
 1. Click **Deploy to Cloudflare**.
@@ -29,7 +31,7 @@ The default address is `*.workers.dev` (this is a Worker, not Pages). It may be 
 
 ## Where things stand today
 
-**The one-click button is live, but still in first-run testing.** If it fails, a technical volunteer can deploy manually using [README.md](README.md). Please report the error so the checklist can be fixed.
+**The one-click button works.** Let it create a new repository; do not manually import the source repo. If it fails, a technical volunteer can deploy manually using [README.md](README.md).
 
 ## Without R2, where do images, audio, and PDFs go?
 
