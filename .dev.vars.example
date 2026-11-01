@@ -1,0 +1,5 @@
+# One-time setup code for /admin. Change it to your own value of at least 8 characters.
+# The example value is rejected by the server. It stops working after the admin password is set.
+# 第一次打开 /admin 时要输入的设置码。必须改成你自己的、至少 8 位的字；示例值会被服务端拒绝。
+# 设置完管理员密码后，这个码就不再有用。
+SETUP_CODE=please-change-this-setup-code

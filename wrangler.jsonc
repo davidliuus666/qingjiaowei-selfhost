@@ -1,0 +1,27 @@
+{
+  // 这是「自部署轻量版」的配置。
+  // 不要在这里写死任何域名：二维码会自动使用当前访问地址。
+  // database_id 是占位符；一键部署按钮或下面的命令会换成你自己的数据库编号。
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "qingjiaowei-selfhost",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-27",
+  "observability": { "enabled": true },
+  // 想绑自己的域名？先把域名托管到同一个 Cloudflare 账号（NS 指向 Cloudflare），
+  // 再取消下面注释、改成你的域名，重新 npm run deploy；Cloudflare 会自动建 DNS 和证书。
+  // 也可以直接在 Cloudflare 面板加 Custom Domain。一键部署按钮不要启用这一段。
+  // "routes": [{ "pattern": "qjw.example.com", "custom_domain": true }],
+  //
+  // 域名生效后，可把对外规范地址固定成它（二维码和媒体绝对链接会用它）。
+  // 不设就用请求本身的地址；没生效前不要填。
+  // "vars": { "PUBLIC_ORIGINS": "https://qjw.example.com" },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "qingjiaowei-selfhost",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  // 生命河自动同步：后台默认关闭，只有打开开关的组才会真正抓取。
+  "triggers": { "crons": ["0 13 * * 1"] }
+}
