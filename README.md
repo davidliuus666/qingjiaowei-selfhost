@@ -1,11 +1,12 @@
 # QJW · Self-hosted edition
 
 > For group leaders: start with [START-HERE.md](START-HERE.md). No technical background required.
+> **Church tech volunteer?** Read [FOR-CHURCH-TECH.md](FOR-CHURCH-TECH.md) — what you are taking on, what it costs, and what it does not do.
 > For maintainers: read [DEPLOY_BUTTON.md](DEPLOY_BUTTON.md) for the release checklist.
 > To bind your own domain: read [DOMAIN.md](DOMAIN.md).
 > 中文说明见 [README.zh-CN.md](README.zh-CN.md)。
 
-**QJW** is the English name of 青椒味, a small-group app for church meetings, sermons, and classes. This is the self-hosted backend for groups that want to own their data. It runs entirely on Cloudflare's free tier:
+**QJW** is the English name of 青椒味, a small-group app for church meetings, sermons, and classes. This is the self-hosted backend for groups that want to own their data: meetings, sermon series, announcements, quizzes, homework, attendance, and prayer requests, all in a SQLite database in your own Cloudflare account. It runs entirely on Cloudflare's free tier:
 
 > **Where members get the app:** the client is published on the [official download page](https://qingjiaowei.gracelink.cc/download), not by this backend. Members can also use the [web app](https://qingjiaowei.gracelink.cc/app) without installing anything. This backend only serves your group's data and QR codes.
 

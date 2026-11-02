@@ -1,6 +1,7 @@
 # 青椒味 · 自部署轻量版
 
 > 给带领人：先看 [START-HERE.zh-CN.md](START-HERE.zh-CN.md)，不用懂技术。
+> **教会技术同工？** 看 [FOR-CHURCH-TECH.md](FOR-CHURCH-TECH.md)——你要接手什么、花多少钱、哪些事它做不到。
 > 给维护者：看 [DEPLOY_BUTTON.zh-CN.md](DEPLOY_BUTTON.zh-CN.md)（发布检查清单）。
 > 想绑自己的域名：看 [DOMAIN.zh-CN.md](DOMAIN.zh-CN.md)。
 
