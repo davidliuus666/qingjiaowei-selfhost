@@ -128,7 +128,7 @@ Notes:
 - The setup page, sign-in page, admin, and classroom all support Chinese and English.
 - The language follows the browser by default. Use the switch in the top right to change it; the choice is remembered in this browser.
 - Text you enter yourself (group names, titles, notices, and so on) is not translated automatically.
-- The app UI is currently Chinese only.
+- The phone app supports Chinese and English. It follows your phone language by default; you can change it in **Settings → Interface language**.
 
 ## License
 

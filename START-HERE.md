@@ -61,7 +61,7 @@ The upload button in the admin is hidden and only a URL field remains. That is i
 
 ## Language
 
-The admin and classroom work in Chinese and English. They follow your browser language by default; the switch in the top right changes it. The phone app is currently Chinese only.
+The admin and classroom work in Chinese and English. They follow your browser language by default; the switch in the top right changes it. The phone app also supports Chinese and English, follows your phone language by default, and can be changed in **Settings → Interface language**.
 
 ## Stuck?
 
