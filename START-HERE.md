@@ -27,6 +27,15 @@ The button copies the code into your GitHub account and creates the D1 database 
 
 That is all. It works without a domain; there is no server to rent and no database to install.
 
+## How members join
+
+Members do not deploy anything, and they do not need to know your Cloudflare address. Ask them to install the app from the official site first, or let them use the web app:
+
+- Android download: <https://qingjiaowei.gracelink.cc/download>
+- Web app: <https://qingjiaowei.gracelink.cc/app>
+
+After installing or opening the web app, they scan the QR code you generated in the admin. The QR code contains your group's server address; the client comes from the official site, while your group's data stays in your own account.
+
 The default address is `*.workers.dev` (this is a Worker, not Pages). It may be unreachable in mainland China. A custom domain usually helps, but Cloudflare's free plan does not guarantee mainland access quality.
 
 ## Where things stand today

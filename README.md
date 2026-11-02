@@ -7,6 +7,8 @@
 
 **QJW** is the English name of 青椒味, a small-group app for church meetings, sermons, and classes. This is the self-hosted backend for groups that want to own their data. It runs entirely on Cloudflare's free tier:
 
+> **Where members get the app:** the client is published on the [official download page](https://qingjiaowei.gracelink.cc/download), not by this backend. Members can also use the [web app](https://qingjiaowei.gracelink.cc/app) without installing anything. This backend only serves your group's data and QR codes.
+
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
 
 > **Do not use Workers & Pages → Create → Import a repository.** After connecting GitHub, let the button create a new repository. That is what provisions D1. Manually importing the source repo skips D1 and fails at the deploy step.
@@ -31,6 +33,7 @@
 3. Pick a name, enter a **setup code you make up** (at least 8 characters), and click deploy. Write the code down; it is not your GitHub or Cloudflare password.
 4. Wait 2–3 minutes. On the Worker page, open **Settings → Domains & Routes**. If `workers.dev` says **Disabled**, click **Enable**. If the page says **No URLs enabled**, this is the same page. The address looks like `https://<worker-name>.<your-subdomain>.workers.dev`.
 5. Open that address with `/admin` at the end. Enter the same setup code, a group name, and an admin password (at least 8 characters). Then generate a QR code.
+6. Send members the [official download page](https://qingjiaowei.gracelink.cc/download) and the [web app](https://qingjiaowei.gracelink.cc/app); they install the app (or open the web app) before scanning.
 
 If `/admin` says **“SETUP_CODE is still the example value”**, go to **Settings → Variables and Secrets**, replace `SETUP_CODE` with your own code, save, and enter that new code on `/admin`. The example value is refused on purpose.
 

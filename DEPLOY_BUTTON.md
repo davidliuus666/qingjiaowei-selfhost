@@ -71,7 +71,8 @@ Use an account that has never used Cloudflare Workers, and follow the beginner p
 - [ ] Series covers show a URL field only
 - [ ] A QR code is generated and the app can join by scanning it
 - [ ] (Optional) After binding a custom domain, `/admin` opens and the QR code's `server=` uses the new domain
-- [ ] Without R2: uploads return 503, `/media` returns 404, and the installer download returns 404
+- [ ] Without R2: uploads return 503 and `/media` returns 404; the installer is not served by this Worker (clients use the official download page)
+- [ ] The official [download page](https://qingjiaowei.gracelink.cc/download) and [web app](https://qingjiaowei.gracelink.cc/app) open; members do not need an APK from the self-hosted Worker
 - [ ] Refreshing the page allows signing in again
 - [ ] The whole flow needs no terminal, domain, or credit card
 - [ ] Timing: under 10 minutes from clicking the button to getting the QR code

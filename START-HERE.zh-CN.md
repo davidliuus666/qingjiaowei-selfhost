@@ -27,6 +27,15 @@
 
 就这些。不绑域名也能用；没有服务器要买，没有数据库要装。
 
+## 成员怎么加入
+
+成员不需要部署，也不需要知道你的 Cloudflare 地址。先让他们从官网装 App，或者直接用网页版：
+
+- 安卓下载页：<https://qingjiaowei.gracelink.cc/download>
+- 网页版：<https://qingjiaowei.gracelink.cc/app>
+
+装好 App 或打开网页版后，再扫你在后台生成的二维码。二维码里带的是你的小组服务器地址；客户端从官网来，数据在你自己账号里，两者不冲突。
+
 默认地址是 `*.workers.dev`（这个版本是 Worker，不是 Pages）。中国大陆可能打不开；想更稳就绑自己的域名，但 Cloudflare 免费版也不保证大陆访问质量。
 
 ## 现在是什么状态

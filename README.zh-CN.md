@@ -6,6 +6,8 @@
 
 **QJW** 是「青椒味」的英文名。这是给「想自己管数据」的小组用的后端。它只依赖 Cloudflare 的免费额度：
 
+> **成员从哪装 App：** 客户端由[官网下载页](https://qingjiaowei.gracelink.cc/download)发布，不从自部署后端下载；不想装 App 也可以直接用[网页版](https://qingjiaowei.gracelink.cc/app)。自部署后台只负责你们小组的数据和二维码。
+
 [![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
 
 > **不要走 Workers & Pages → Create → Import a repository。** 连接 GitHub 后，让按钮自己新建仓库；手动导入源仓库不会自动创建 D1，最后会在部署阶段失败。
@@ -30,6 +32,7 @@
 3. 起个名字，自己编一个**部署设置码**（至少 8 位），点部署。把码写下来；它不是 GitHub 或 Cloudflare 密码。
 4. 等 2-3 分钟。打开 Worker 的 **Settings → Domains & Routes**；如果 `workers.dev` 显示 **Disabled**，点 **Enable**。如果页面写 **No URLs enabled**，也是在这个页面开。地址长这样：`https://<worker名>.<你的子域>.workers.dev`。
 5. 在这个地址后面加 `/admin`。输入同一个设置码、小组名称、管理员密码（至少 8 位），然后生成二维码。
+6. 把[官网下载页](https://qingjiaowei.gracelink.cc/download)和[网页版](https://qingjiaowei.gracelink.cc/app)发给成员；他们装好 App（或打开网页版）后再扫码。
 
 如果 `/admin` 提示 **“部署设置码还是示例值”**，去 **Settings → Variables and Secrets**，把 `SETUP_CODE` 换成你自己的码，保存，再回 `/admin` 用新码。示例值是服务端故意拒绝的。
 

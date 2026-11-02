@@ -895,6 +895,21 @@ export const ADMIN_PAGE_HTML = `<!doctype html>
     word-break: break-all;
   }
   .invite-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+  .invite-share { margin-top: 12px; }
+  .invite-share strong { display: block; font-size: 13px; }
+  .invite-share-text {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 112px;
+    margin: 8px 0;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--modal-bg);
+    color: var(--text);
+    font: 12px/1.6 ui-monospace, SFMono-Regular, Menlo, monospace;
+    resize: vertical;
+  }
   .access-warning {
     margin-top: 12px;
     padding: 9px 11px;
@@ -1540,7 +1555,7 @@ export const ADMIN_PAGE_HTML = `<!doctype html>
     '自动创建系列失败': 'Could not create the series automatically',
 
     '邀请新手机': 'Invite a new phone',
-    '生成一个 24 小时内有效的小组二维码。对方面对面在 App 里扫，或者把二维码图片发给他，让他在 App 里从相册导入。一个码可以加好几台手机，不用每台都生成。': 'Generate a group QR code valid for 24 hours. The other person can scan it in the app or import the image from their photo library. One code can add several phones, so you do not need a new code for each one.',
+    '生成一个 24 小时内有效的小组二维码。对方面对面在 App 或网页版里扫，或者把二维码图片发给他，让他在 App / 网页版里从相册导入。一个码可以加好几台手机，不用每台都生成。': 'Generate a group QR code valid for 24 hours. The other person can scan it in the app or web app, or import the image from their photo library. One code can add several phones, so you do not need a new code for each one.',
     '这个二维码可以加入几台手机': 'How many phones can use this QR code',
     '只给 1 台手机': '1 phone',
     '最多 5 台手机': 'Up to 5 phones',
@@ -1555,9 +1570,19 @@ export const ADMIN_PAGE_HTML = `<!doctype html>
     '这个二维码已经失效了': 'This QR code has already expired',
     '二维码已作废，已经加入的手机不受影响': 'QR code revoked. Phones that already joined are unaffected.',
     '收起来': 'Hide',
-    '这个二维码不是网址，只能在青椒味 App 里扫。只在这里显示一次，到期或用完自动失效。': 'This is not a URL. It can only be scanned in the QJW app. It is shown only once and expires automatically.',
+    '这个二维码不是网址，只能在青椒味 App 或网页版里扫。只在这里显示一次，到期或用完自动失效。': 'This is not a URL. It can only be scanned in the QJW app or web app. It is shown only once and expires automatically.',
     '生成中…': 'Generating…',
     '小组二维码生成了，24 小时内有效': 'Group QR code generated. It is valid for 24 hours.',
+    '发给成员的话': 'Message for members',
+    '复制后，把上面的二维码图片一起发到群里。': 'Copy this, then send the QR code image above to the group.',
+    '复制成员说明': 'Copy member message',
+    '成员说明已复制，记得把二维码图片一起发出去': 'Member message copied. Remember to send the QR code image too.',
+    '复制失败，请手动选中文字复制': 'Copy failed. Select the text and copy it manually.',
+    '我们小组的青椒味后台已经准备好了。': 'Our QJW group backend is ready.',
+    '1. 安卓手机：在官网下载 App：': '1. Android: download the app from ',
+    '2. iPhone 或不想装 App：直接用网页版：': '2. iPhone or prefer not to install: use the web app at ',
+    '3. 装好或打开后，扫我发的小组二维码加入。': '3. After installing or opening it, scan the group QR code I sent.',
+    '二维码 24 小时内有效，不要转发给小组以外的人。': 'The QR code is valid for 24 hours. Do not share it outside the group.',
     '再生成一个': 'Generate another',
     '已连接的手机': 'Connected phones',
     '手机丢了或者不想让对方继续看，就在这里断开。断开后那台手机需要重新扫码加入。': 'If a phone is lost or should no longer have access, disconnect it here. It will need to scan a new QR code to rejoin.',
@@ -2446,6 +2471,27 @@ export const ADMIN_PAGE_HTML = `<!doctype html>
     }
   }
 
+  function copyInviteText(field) {
+    var done = function () {
+      toast('成员说明已复制，记得把二维码图片一起发出去');
+    };
+    var fallback = function () {
+      field.focus();
+      field.select();
+      try {
+        if (document.execCommand('copy')) done();
+        else toast('复制失败，请手动选中文字复制', true);
+      } catch (error) {
+        toast('复制失败，请手动选中文字复制', true);
+      }
+    };
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(field.value).then(done).catch(fallback);
+    } else {
+      fallback();
+    }
+  }
+
   function webpName(name) {
     var text = String(name || 'image');
     var dot = text.lastIndexOf('.');
@@ -3107,7 +3153,7 @@ export const ADMIN_PAGE_HTML = `<!doctype html>
     inviteCard.appendChild(h('h2', { text: '邀请新手机' }));
     inviteCard.appendChild(h('p', {
       class: 'access-lead',
-      text: '生成一个 24 小时内有效的小组二维码。对方面对面在 App 里扫，或者把二维码图片发给他，让他在 App 里从相册导入。一个码可以加好几台手机，不用每台都生成。'
+      text: '生成一个 24 小时内有效的小组二维码。对方面对面在 App 或网页版里扫，或者把二维码图片发给他，让他在 App / 网页版里从相册导入。一个码可以加好几台手机，不用每台都生成。'
     }));
     var uses = h('select', { class: 'filter', 'aria-label': '这个二维码可以加入几台手机' });
     [
@@ -3182,9 +3228,40 @@ export const ADMIN_PAGE_HTML = `<!doctype html>
       };
       actions.appendChild(discard);
       detail.appendChild(actions);
+
+      var shareLines = [
+        tr('我们小组的青椒味后台已经准备好了。'),
+        tr('1. 安卓手机：在官网下载 App：') + 'https://qingjiaowei.gracelink.cc/download',
+        tr('2. iPhone 或不想装 App：直接用网页版：') + 'https://qingjiaowei.gracelink.cc/app',
+        tr('3. 装好或打开后，扫我发的小组二维码加入。'),
+        tr('二维码 24 小时内有效，不要转发给小组以外的人。')
+      ];
+      var share = h('div', { class: 'invite-share' });
+      share.appendChild(h('strong', { text: '发给成员的话' }));
+      share.appendChild(h('p', {
+        class: 'access-lead',
+        text: '复制后，把上面的二维码图片一起发到群里。'
+      }));
+      var shareText = h('textarea', {
+        class: 'invite-share-text',
+        readonly: 'readonly',
+        rows: 7,
+        'aria-label': '发给成员的话'
+      });
+      shareText.value = shareLines.join('\n');
+      share.appendChild(shareText);
+      var copyShare = h('button', {
+        type: 'button',
+        class: 'btn mini',
+        text: '复制成员说明'
+      });
+      copyShare.onclick = function () { copyInviteText(shareText); };
+      share.appendChild(copyShare);
+      detail.appendChild(share);
+
       detail.appendChild(h('div', {
         class: 'access-warning',
-        text: '这个二维码不是网址，只能在青椒味 App 里扫。只在这里显示一次，到期或用完自动失效。'
+        text: '这个二维码不是网址，只能在青椒味 App 或网页版里扫。只在这里显示一次，到期或用完自动失效。'
       }));
       box.appendChild(detail);
       inviteResult.appendChild(box);
