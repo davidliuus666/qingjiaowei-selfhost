@@ -20,8 +20,18 @@
 ## 你需要准备
 
 1. 一个 Cloudflare 账号（邮箱注册，免费）
-2. 一串只有你知道的「设置码」（第一次打开后台时用）
+2. 一串你自己编的、只有你知道的「设置码」，至少 8 位（第一次打开后台时用）
 3. 一键部署需要一个 GitHub 账号（按钮会把代码复制到你自己的仓库）
+
+## 一键部署（小白版）
+
+1. 点上面的 **Deploy to Cloudflare**。
+2. 登录 GitHub 和 Cloudflare。连接 GitHub 后，**让 Cloudflare 自己新建仓库**；不要走 **Workers & Pages → Create → Import a repository**，那条路不会建 D1，最后会部署失败。如果名字被占用，Cloudflare 会在后面加个数字，比如 `qingjiaowei-selfhost2`，这是正常的。
+3. 起个名字，自己编一个**部署设置码**（至少 8 位），点部署。把码写下来；它不是 GitHub 或 Cloudflare 密码。
+4. 等 2-3 分钟。打开 Worker 的 **Settings → Domains & Routes**；如果 `workers.dev` 显示 **Disabled**，点 **Enable**。如果页面写 **No URLs enabled**，也是在这个页面开。地址长这样：`https://<worker名>.<你的子域>.workers.dev`。
+5. 在这个地址后面加 `/admin`。输入同一个设置码、小组名称、管理员密码（至少 8 位），然后生成二维码。
+
+如果 `/admin` 提示 **“部署设置码还是示例值”**，去 **Settings → Variables and Secrets**，把 `SETUP_CODE` 换成你自己的码，保存，再回 `/admin` 用新码。示例值是服务端故意拒绝的。
 
 ## 部署（给技术同工的手动版）
 
@@ -47,6 +57,8 @@ npx wrangler secret put SETUP_CODE
 https://<你的-worker名>.<你的-workers子域>.workers.dev/admin
 ```
 
+如果 Worker 页面写 **No URLs enabled**，或者 `workers.dev` 显示 **Disabled**，先打开 **Settings → Domains & Routes → workers.dev → Enable**。准确地址也会显示在那里。
+
 第一次打开会要求输入：
 
 - 部署设置码
@@ -56,6 +68,8 @@ https://<你的-worker名>.<你的-workers子域>.workers.dev/admin
 设置好后，去「安全」页生成二维码，发到群里，大家用 App 扫码加入。
 
 > 自部署版必须设置 `SETUP_CODE`，而且至少 8 位、不能是示例值；没设置的话第一次设置会被拒绝。这样公开地址不会被陌生人抢先设管理员密码。
+>
+> 如果 `/admin` 提示设置码还是示例值，去 **Settings → Variables and Secrets** 把 `SETUP_CODE` 换掉，保存后再用新码。
 
 ## 绑定自己的域名（可选）
 

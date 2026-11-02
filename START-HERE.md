@@ -16,13 +16,13 @@ The button copies the code into your GitHub account and creates the D1 database 
 
 > **Do not use Cloudflare's "Import a repository" option.** Let the button create the new repository; that is what creates D1.
 
-## Deploy with the one-click button: five steps, plus an optional domain step
+## Deploy with the one-click button
 
 1. Click **Deploy to Cloudflare**.
-2. Sign in to Cloudflare and GitHub, then allow access.
-3. Pick a name and click deploy.
-4. Wait 2–3 minutes, then open the URL Cloudflare gives you and add `/admin` at the end.
-5. Enter the setup code, your group name, and an admin password. Generate a QR code and share it with the group.
+2. Sign in to GitHub and Cloudflare. After GitHub connects, **let Cloudflare create a new repository**. Do not choose **Import a repository**; that path does not create D1. If Cloudflare adds a number such as `...2`, that is normal.
+3. Pick a name, enter a **setup code you make up** (at least 8 characters), and click deploy. Write it down; it is not your GitHub or Cloudflare password.
+4. Wait 2–3 minutes. On the Worker page, open **Settings → Domains & Routes**. If `workers.dev` is **Disabled**, click **Enable**. If it says **No URLs enabled**, this is the same page. Your address is `https://<worker-name>.<your-subdomain>.workers.dev`.
+5. Open that address with `/admin` at the end. Enter the same setup code, your group name, and an admin password (at least 8 characters). Generate a QR code and share it with the group.
 6. (Optional) To use your own domain, follow [DOMAIN.md](DOMAIN.md) after deployment. The one-click button cannot bind the domain, because registration and nameserver changes happen outside Cloudflare.
 
 That is all. It works without a domain; there is no server to rent and no database to install.
@@ -32,6 +32,12 @@ The default address is `*.workers.dev` (this is a Worker, not Pages). It may be 
 ## Where things stand today
 
 **The one-click button works.** Let it create a new repository; do not manually import the source repo. If it fails, a technical volunteer can deploy manually using [README.md](README.md).
+
+## Common fixes
+
+- **No URL / `workers.dev` is Disabled:** open **Settings → Domains & Routes → workers.dev → Enable**.
+- **“SETUP_CODE is still the example value”:** open **Settings → Variables and Secrets**, replace `SETUP_CODE` with your own code, save, and enter that code on `/admin`.
+- **Deploy failed after you manually imported the repository:** start over with the button; manual import does not create D1.
 
 ## Without R2, where do images, audio, and PDFs go?
 

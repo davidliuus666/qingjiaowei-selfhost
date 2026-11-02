@@ -61,8 +61,10 @@ Use an account that has never used Cloudflare Workers, and follow the beginner p
 
 - [ ] The button signs the user in to Cloudflare / GitHub
 - [ ] D1 is created automatically and deployment succeeds without asking for a database ID
+- [ ] The Worker has a working URL (enable `workers.dev` if it starts Disabled)
 - [ ] `/admin` shows four fields: setup code, group name, password, confirm password
 - [ ] A wrong setup code is rejected with a clear message
+- [ ] The example setup code is refused with a clear message
 - [ ] The correct setup code creates the group and enters the admin
 - [ ] The language switch changes the admin and classroom to English, with no leftover Chinese UI text
 - [ ] The admin has no media library or upload buttons

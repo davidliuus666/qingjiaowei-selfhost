@@ -25,7 +25,7 @@
   "cloudflare": {
     "bindings": {
       "SETUP_CODE": {
-        "description": "Setup code for the first admin visit (at least 8 characters, not the example value). 第一次打开后台时的设置码（至少 8 位，不要用示例值）。"
+        "description": "Make up your own one-time setup code (at least 8 characters). You will enter it once at /admin; do not use the example value. 自己编一个一次性设置码（至少 8 位），第一次打开 /admin 时输入；不要用示例值。"
       }
     }
   }

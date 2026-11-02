@@ -21,8 +21,18 @@
 ## What you need
 
 1. A Cloudflare account (free, email signup)
-2. A one-time **setup code** that only you know (used when you first open the admin)
+2. A one-time **setup code** that you make up, at least 8 characters (used only when you first open the admin)
 3. For one-click deploy: a GitHub account (the button copies the code into your own repository)
+
+## One-click deployment (beginner path)
+
+1. Click **Deploy to Cloudflare** above.
+2. Sign in to GitHub and Cloudflare. After GitHub connects, **let Cloudflare create a new repository**. Do not use **Workers & Pages → Create → Import a repository**; that path does not create D1 and fails at deploy. If the name is taken, Cloudflare adds a number such as `qingjiaowei-selfhost2`; that is normal.
+3. Pick a name, enter a **setup code you make up** (at least 8 characters), and click deploy. Write the code down; it is not your GitHub or Cloudflare password.
+4. Wait 2–3 minutes. On the Worker page, open **Settings → Domains & Routes**. If `workers.dev` says **Disabled**, click **Enable**. If the page says **No URLs enabled**, this is the same page. The address looks like `https://<worker-name>.<your-subdomain>.workers.dev`.
+5. Open that address with `/admin` at the end. Enter the same setup code, a group name, and an admin password (at least 8 characters). Then generate a QR code.
+
+If `/admin` says **“SETUP_CODE is still the example value”**, go to **Settings → Variables and Secrets**, replace `SETUP_CODE` with your own code, save, and enter that new code on `/admin`. The example value is refused on purpose.
 
 ## Manual deployment (for technical volunteers)
 
@@ -48,6 +58,8 @@ When deployment finishes, open:
 https://<your-worker-name>.<your-workers-subdomain>.workers.dev/admin
 ```
 
+If the Worker page says **No URLs enabled** or `workers.dev` is **Disabled**, open **Settings → Domains & Routes → workers.dev → Enable** first. The exact address is shown there.
+
 The first visit asks for:
 
 - the deployment setup code
@@ -57,6 +69,8 @@ The first visit asks for:
 After that, open **Access**, generate a QR code, and share it with the group. People join by scanning it in the app.
 
 > `SETUP_CODE` is required in the self-hosted edition, must be at least 8 characters, and must not be the example value. Otherwise the first-time setup is refused, so a public URL cannot be claimed by a stranger.
+>
+> If `/admin` says the setup code is still the example value, replace `SETUP_CODE` under **Settings → Variables and Secrets**, save, then enter the new code.
 
 ## Custom domain (optional)
 
