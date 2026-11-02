@@ -2,6 +2,7 @@
 
 > For group leaders: start with [START-HERE.md](START-HERE.md). No technical background required.
 > **Church tech volunteer?** Read [FOR-CHURCH-TECH.md](FOR-CHURCH-TECH.md) — what you are taking on, what it costs, and what it does not do.
+> **Deciding whether to self-host at all?** Read [the article](https://qingjiaowei.gracelink.cc/en/blog/self-hosted-small-group-data) — what a group actually stores, and what owning it costs.
 > For maintainers: read [DEPLOY_BUTTON.md](DEPLOY_BUTTON.md) for the release checklist.
 > To bind your own domain: read [DOMAIN.md](DOMAIN.md).
 > 中文说明见 [README.zh-CN.md](README.zh-CN.md)。

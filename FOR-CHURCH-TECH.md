@@ -4,6 +4,8 @@ You are the person your church asks when something needs a server. Someone wants
 
 This repository is for that situation. You deploy it once, hand out one QR code, and the group runs on your own Cloudflare account.
 
+If you have to talk someone into it, or talk yourself out of it, [this article](https://qingjiaowei.gracelink.cc/en/blog/self-hosted-small-group-data) covers the trade-offs without the sales pitch: what a group actually stores, what self-hosting really costs, and when it is the wrong choice.
+
 ## What it actually is
 
 - A **Cloudflare Worker** that serves the group's backend: meetings, sermons, announcements, quizzes, homework, attendance, prayer requests.
