@@ -15,6 +15,14 @@
 
 > **Do not use Workers & Pages → Create → Import a repository.** After connecting GitHub, let the button create a new repository. That is what provisions D1. Manually importing the source repo skips D1 and fails at the deploy step.
 
+<p align="center">
+  <img src="https://qingjiaowei.gracelink.cc/screenshots/app-content.png" width="230" alt="Classroom content list in the QJW app">
+  <img src="https://qingjiaowei.gracelink.cc/screenshots/app-episode.png" width="230" alt="A sermon episode with audio in the QJW app">
+  <img src="https://qingjiaowei.gracelink.cc/screenshots/app-bible-en.png" width="230" alt="Bible reader in the QJW app">
+</p>
+
+<p align="center"><sub>Members use the app or the web app. This repository is the backend they talk to.</sub></p>
+
 - **Workers** for the backend
 - **D1** for text content, meetings, announcements, quizzes, and homework
 - **No R2 required** — images, audio, and PDFs are external public URLs
@@ -131,6 +139,10 @@ Notes:
 - The language follows the browser by default. Use the switch in the top right to change it; the choice is remembered in this browser.
 - Text you enter yourself (group names, titles, notices, and so on) is not translated automatically.
 - The phone app supports Chinese and English. It follows your phone language by default; you can change it in **Settings → Interface language**.
+
+## If this is useful
+
+A star helps the next group leader find it. That is the whole ask.
 
 ## License
 
