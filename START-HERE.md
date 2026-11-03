@@ -10,7 +10,7 @@ Read this page first. You do not need to be technical.
 
 **You do not need:** a server, a domain, a credit card, the command line, or database knowledge. The free address works without a domain; if you want your own domain, that is one optional step after deployment.
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gracelink-david/qingjiaowei-selfhost)
 
 The button copies the code into your GitHub account and creates the D1 database for you.
 

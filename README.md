@@ -11,7 +11,7 @@
 
 > **Where members get the app:** the client is published on the [official download page](https://qingjiaowei.gracelink.cc/download), not by this backend. Members can also use the [web app](https://qingjiaowei.gracelink.cc/app) without installing anything. This backend only serves your group's data and QR codes.
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gracelink-david/qingjiaowei-selfhost)
 
 > **Do not use Workers & Pages → Create → Import a repository.** After connecting GitHub, let the button create a new repository. That is what provisions D1. Manually importing the source repo skips D1 and fails at the deploy step.
 

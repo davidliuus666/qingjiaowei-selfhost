@@ -10,7 +10,7 @@
 
 **你不需要：** 服务器、域名、信用卡、命令行、数据库知识。先用免费地址就能跑；想绑自己的域名也可以，部署后多一步。
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gracelink-david/qingjiaowei-selfhost)
 
 按钮会把代码复制到你自己的 GitHub 账号，并自动创建 D1 数据库。
 

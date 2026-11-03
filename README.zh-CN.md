@@ -9,7 +9,7 @@
 
 > **成员从哪装 App：** 客户端由[官网下载页](https://qingjiaowei.gracelink.cc/download)发布，不从自部署后端下载；不想装 App 也可以直接用[网页版](https://qingjiaowei.gracelink.cc/app)。自部署后台只负责你们小组的数据和二维码。
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gracelink-david/qingjiaowei-selfhost)
 
 > **不要走 Workers & Pages → Create → Import a repository。** 连接 GitHub 后，让按钮自己新建仓库；手动导入源仓库不会自动创建 D1，最后会在部署阶段失败。
 

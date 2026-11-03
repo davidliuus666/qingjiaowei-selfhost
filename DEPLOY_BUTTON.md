@@ -4,7 +4,7 @@ This page is for maintainers, not group leaders. Leaders should read [START-HERE
 
 ## Current status
 
-The public repository is live at <https://github.com/davidliuus666/qingjiaowei-selfhost>, and the button has been used successfully in a real Cloudflare account. It created a new repository and a real D1 database.
+The public repository is live at <https://github.com/gracelink-david/qingjiaowei-selfhost>, and the button has been used successfully in a real Cloudflare account. It created a new repository and a real D1 database.
 
 The clean-account checklist below remains for regression testing. Keep the manual steps as the fallback.
 
@@ -46,7 +46,7 @@ It must never contain:
 ## Button markup
 
 ```markdown
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gracelink-david/qingjiaowei-selfhost)
 ```
 
 Official docs: <https://developers.cloudflare.com/workers/platform/deploy-buttons/>

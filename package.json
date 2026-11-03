@@ -4,7 +4,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/davidliuus666/qingjiaowei-selfhost.git"
+    "url": "git+https://github.com/gracelink-david/qingjiaowei-selfhost.git"
   },
   "type": "module",
   "scripts": {

@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-公开仓库已经建好：<https://github.com/davidliuus666/qingjiaowei-selfhost>，按钮也已经在真实 Cloudflare 账号上跑通：它会新建一个仓库副本，并自动创建真实的 D1 数据库。
+公开仓库已经建好：<https://github.com/gracelink-david/qingjiaowei-selfhost>，按钮也已经在真实 Cloudflare 账号上跑通：它会新建一个仓库副本，并自动创建真实的 D1 数据库。
 
 下面的干净账号清单继续用于回归测试。手动步骤保留作为兜底。
 
@@ -46,7 +46,7 @@
 ## 按钮代码
 
 ```markdown
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/davidliuus666/qingjiaowei-selfhost)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/gracelink-david/qingjiaowei-selfhost)
 ```
 
 官方说明：<https://developers.cloudflare.com/workers/platform/deploy-buttons/>
